@@ -74,6 +74,7 @@ def one_away(s1:str,s2:str)->str:
     if abs(len(s1)-len(s2))>=2:
         return('No')
     
+    
     if abs(len(s1)-len(s2))==1:
         if s1>s2:
             long=s1
@@ -83,23 +84,24 @@ def one_away(s1:str,s2:str)->str:
             short=s1
         flag=False
         a=0
-        for i in range(len(long)-1):
-            if (long[i+a] != short[i]):
+        for i in range(len(short)+1): # this 'a' thing does not work:pale,pbl
+            if (long[i+a] != short[i-a]):
                 if flag == True:
                     return('No')
                 else:
                     flag = True
-                    a=1
-        return('yes')
+                    a=1           
+        return('Yes')
+    
     
     if (len(s1)==len(s2)):
-            flag=bool()
+            flag = bool()
             for i in range(len(s1)):
                 if (s1[i] != s2[i]):
                     if flag == True:
                         return('No')
                     else:
-                        flag = not flag
+                        flag = True
     return('yes')
      
                
