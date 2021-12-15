@@ -64,4 +64,44 @@ def urlify(s:str)->str:
     result=''.join(map(str, mylist))
     print(result)    
     
+    
+    
+def one_away(s1:str,s2:str)->str:
+    """takes two strings and outputs true if they are one edit away"""
+    s1=list(s1)
+    s2=list(s2)
+    
+    if abs(len(s1)-len(s2))>=2:
+        return('No')
+    
+    if abs(len(s1)-len(s2))==1:
+        if s1>s2:
+            long=s1
+            short=s2
+        else:
+            long=s2
+            short=s1
+        flag=False
+        a=0
+        for i in range(len(long)-1):
+            if (long[i+a] != short[i]):
+                if flag == True:
+                    return('No')
+                else:
+                    flag = True
+                    a=1
+        return('yes')
+    
+    if (len(s1)==len(s2)):
+            flag=bool()
+            for i in range(len(s1)):
+                if (s1[i] != s2[i]):
+                    if flag == True:
+                        return('No')
+                    else:
+                        flag = not flag
+    return('yes')
+     
+               
+                
                 
