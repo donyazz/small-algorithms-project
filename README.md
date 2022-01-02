@@ -1,2 +1,2 @@
 # small-algorithms-project
-mini algorithm projects in python-from 'cracking the coding interview' and other places.
+Mini algorithm projects in python. Projects are mainly taken from CLRS book (Introduction to Algorithms) and the 'cracking the coding interview' book.
